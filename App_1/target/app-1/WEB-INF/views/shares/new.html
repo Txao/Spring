@@ -8,7 +8,7 @@
 <form th:method="POST" th:action="@{/shares}" th:object="${share}">
     <label for="date">Date: </label>
     <input type="text" th:field="*{date}" id="date"/>
-
+    <div style="color: red" th:if="${#fields.hasErrors('date')}" th:errors="*{date}">Error</div>
     <br/>
 
     <label for="company">Company: </label>

@@ -14,7 +14,9 @@
     <div th:each="share : ${shares}">
         <tr>
             <td th:text="${share.getDate()}">Date</td>
-            <td th:text="${share.getCompany()}">Company</td>
+            <td>
+                <a th:href="@{/shares/share/{company}(company=${share.getCompany()})}" th:text="${share.getCompany()}">Company</a>
+            </td>
             <td th:text="${share.getPrice()}">Price</td>
         </tr>
     </div>

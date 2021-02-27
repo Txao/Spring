@@ -1,7 +1,11 @@
 package com.java.app.models;
 
+import jakarta.validation.constraints.NotEmpty;
+
 public class Share {
+    @NotEmpty(message = "Date should not be empty")
     private String date;
+
     private String company;
     private int price;
 
