@@ -35,21 +35,21 @@ public class SharesController {
         return "redirect:/shares";
     }
 
-    @GetMapping("/share/{id}")
-    public String edit(@PathVariable("id") int id, Model model) {
-        model.addAttribute("share", shareDAO.getShare(id));
+    @GetMapping("/share/{company}")
+    public String edit(@PathVariable("company") String company, Model model) {
+        model.addAttribute("share", shareDAO.getShare(company));
         return "shares/share";
     }
 
-    @PatchMapping("/edit/{id}")
-    public String update(@ModelAttribute("share") Share share, @PathVariable("id") int id) {
-        shareDAO.update(id, share);
+    @PatchMapping("/edit/{company}")
+    public String update(@ModelAttribute("share") Share share, @PathVariable("company") String company) {
+        shareDAO.update(company, share);
         return "redirect:/shares";
     }
 
-    @DeleteMapping("/delete/{id}")
-    public String delete(@PathVariable("id") int id) {
-        shareDAO.delete(id);
+    @DeleteMapping("/delete/{company}")
+    public String delete(@PathVariable("company") String company) {
+        shareDAO.delete(company);
         return "redirect:/shares";
     }
 }

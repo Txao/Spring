@@ -9,7 +9,7 @@
     <H1>Share</H1>
 </div>
 
-<form th:method="PATCH" th:action="@{/shares/edit/{id}(id=${share.getId()})}" th:object="${share}">
+<form th:method="PATCH" th:action="@{/shares/edit/{company}(company=${share.getCompany()})}" th:object="${share}">
     <label for="date">Date: </label>
     <input type="text" th:field="*{date}" id="date"/>
 
@@ -28,7 +28,7 @@
     <input type="submit" value="Save"/>
 </form>
 
-<form th:method="DELETE" th:action="@{/shares/delete/{id}(id=${share.getId()})}" th:object="${share}">
+<form th:method="DELETE" th:action="@{/shares/delete/{company}(company=${share.getCompany()})}" th:object="${share}">
     <input type="submit" value="Delete"/>
 </form>
 </body>

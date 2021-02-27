@@ -11,7 +11,6 @@ public class ShareMapper implements RowMapper<Share> {
     public Share mapRow(ResultSet resultSet, int i) throws SQLException {
         Share share = new Share();
 
-        share.setId(resultSet.getInt("id"));
         share.setDate(resultSet.getString("date"));
         share.setCompany(resultSet.getString("company"));
         share.setPrice(resultSet.getInt("price"));
