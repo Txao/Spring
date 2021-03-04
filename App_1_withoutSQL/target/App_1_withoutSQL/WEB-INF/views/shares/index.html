@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Shares</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Company</th>
+        <th>Price</th>
+    </tr>
+    <div th:each="share : ${shares}">
+        <tr>
+            <td th:text="${share.key}">ID</td>
+            <td th:text="${share.value.getDate()}">Date</td>
+            <td>
+                <a th:href="@{/shares/share/{id}(id=${share.key})}" th:text="${share.value.getCompany()}">Company</a>
+            </td>
+            <td th:text="${share.value.getPrice()}">Price</td>
+        </tr>
+    </div>
+</table>
+
+<br/>
+
+<a href="/shares/new">Add new share</a>
+</body>
+</html>

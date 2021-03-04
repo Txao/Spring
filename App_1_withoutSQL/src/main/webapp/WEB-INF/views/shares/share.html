@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Share</title>
+</head>
+<body>
+<div style="position: center">
+    <H1>Share</H1>
+</div>
+
+<form th:method="PATCH" th:action="@{/shares/edit/{id}(id=${shareID})}" th:object="${share}">
+    <label for="date">Date: </label>
+    <input type="text" th:field="*{date}" id="date"/>
+
+    <br/>
+
+    <label for="company">Company: </label>
+    <input type="text" th:field="*{company}" id="company"/>
+
+    <br/>
+
+    <label for="price">Price: </label>
+    <input type="text" th:field="*{price}" id="price"/>
+
+    <br/>
+
+    <input type="submit" value="Save"/>
+</form>
+
+<form th:method="DELETE" th:action="@{/shares/delete/{id}(id=${shareID})}" th:object="${share}">
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>
